@@ -1,0 +1,51 @@
+<div>
+    <h1 style="text-align: center;">{{title}}</h1>
+    <br>
+    <table class="table">
+        <thead>
+            <th scope="col">
+                <input type="text" class="form-control" placeholder="Enter Id" ng-model="clientList.Id">
+            </th>
+            <th scope="col">
+                <input type="text" class="form-control" placeholder="Enter Name" ng-model="clientList.Name">
+            </th>
+            <th scope="col">
+                <input type="text" name="address" class="form-control" placeholder="Enter Address" ng-model="clientList.Address">
+            </th>
+            <th scope="col">
+                <input type="text" name="phoneNumber" class="form-control" placeholder="Enter PhoneNumber" ng-model="clientList.PhoneNumber">
+            </th>
+            <th scope="col">
+                <input type="email" name="email" class="form-control" placeholder="Enter Email" ng-model="clientList.Email">
+            </th>
+            <th scope="col">
+                <input type="button" value="add" class="form-control" ng-click="addClient()">
+            </th>
+            <th scope="col">
+                <input type="button" value="update" class="form-control" ng-click="updateClient()">
+            </th>
+        </thead>
+    </table>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">PhoneNumber</th>
+            <th scope="col">Email</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr ng-repeat = "client in dataList">
+            <th scope="row">{{client.Id}}</th>
+            <td>{{client.Name}}</td>
+            <td>{{client.Address}}</td>
+            <td>{{client.PhoneNumber}}</td>
+            <td>{{client.Email}}</td>
+            <td> <a href="#" ng-click="deleteClient(client)">delete</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>   
